@@ -13,6 +13,8 @@ import android.view.WindowManager;
 
 import com.workpath.bookstreamapp.utils.StatusBarUtil;
 
+import java.io.IOException;
+
 /**
  * Created by JayChen on 2020/2/3.
  */
@@ -43,7 +45,11 @@ public abstract class MyFragment extends Fragment {
             if (root != null) {
                 Log.d(TAG, "onCreateView" + "布局转化成功！！！");
             }
-            initWidget(root);
+            try {
+                initWidget(root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             initData();
             mRoot = root;
 
@@ -72,7 +78,7 @@ public abstract class MyFragment extends Fragment {
     protected abstract int getContentLayoutId();
 
     /**初始化控件**/
-    protected abstract void initWidget(View view);
+    protected abstract void initWidget(View view) throws IOException;
 
     /**初始化数据**/
     protected abstract void initData();

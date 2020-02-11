@@ -1,4 +1,4 @@
-package com.workpath.bookstreamapp.okhttp.exception;
+package com.workpath.bookstreamapp.okhttp;
 
 
 public class OkHttpException extends Exception {

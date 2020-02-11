@@ -1,4 +1,4 @@
-package com.workpath.bookstreamapp.okhttp.response;
+package com.workpath.bookstreamapp.okhttp;
 
 /**
  * Created by meng on 2018/3/14.

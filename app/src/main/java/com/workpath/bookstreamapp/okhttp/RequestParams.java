@@ -1,4 +1,7 @@
-package com.workpath.bookstreamapp.okhttp.request;
+package com.workpath.bookstreamapp.okhttp;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -20,6 +23,8 @@ public class RequestParams {
 
     public ConcurrentHashMap<String, Object> fileParams = new ConcurrentHashMap<String, Object>();
 
+    public JSONObject JasonParam = new JSONObject();
+
     /**
      * Constructs a new empty {@code RequestParams} instance.
      */
@@ -40,11 +45,10 @@ public class RequestParams {
             }
         }
     }
-    public RequestParams(Map<String, Object> source, int a) {
+    public RequestParams(Map<String, Object> source, int a) throws FileNotFoundException {
         if (source != null) {
-//            for (Map.Entry<String, String> entry : source.entrySet()) {
-//                put(entry.getKey(), entry.getValue());
-//            }
+           for (Map.Entry<String, Object> entry : source.entrySet()) {
+               put(entry.getKey(), entry.getValue());            }
         }
     }
 
@@ -98,5 +102,24 @@ public class RequestParams {
             return true;
         }
         return false;
+    }
+
+    public void jasonPut(String key,String value) throws JSONException {
+        if (key != null && value != null) {
+            JasonParam.put(key, value);
+        }
+    }
+
+    public void jasonPut(String key,int value) throws JSONException {
+        if (key != null && (Integer)value!=null) {
+            JasonParam.put(key, value);
+        }
+    }
+
+    public void jasonPut(String key, Object object) throws JSONException {
+
+        if (key != null && object!=null) {
+            JasonParam.put(key, object);
+        }
     }
 }
