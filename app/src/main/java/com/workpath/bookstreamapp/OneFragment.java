@@ -52,7 +52,7 @@ public class OneFragment extends MyFragment{
     protected void initData() {
 
         try {
-            RequestCenter.get_users_msg(new MyHandler() {
+            RequestCenter.getUsersMsg(new MyHandler() {
                 @Override
                 public void onSuccess(Object responseObj) {
                     allUserBean = (AllUserBean) responseObj;

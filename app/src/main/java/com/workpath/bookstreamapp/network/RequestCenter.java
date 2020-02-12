@@ -23,7 +23,7 @@ public class RequestCenter {
      * @throws IOException
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void get_users_msg(MyHandler handler) throws IOException {
+    public static void getUsersMsg(MyHandler handler) throws IOException {
 
         //OkHttpMethods.httpGet("http://www.baidu.com",AllUserBean.class,handler);
         OkHttpMethods.AsyncHttpGet(HttpConstants.ALL_USER_MSG,AllUserBean.class,handler);
