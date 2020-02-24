@@ -31,7 +31,8 @@
             app:itemTextColor="@color/btnv_fault"
             android:id="@+id/btnv"
             android:layout_width="match_parent"
-            android:layout_height="48dp">
+            android:layout_height="48dp"
+            android:background="@color/white">
 
         </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
     </LinearLayout>

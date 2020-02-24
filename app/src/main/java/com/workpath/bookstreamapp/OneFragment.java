@@ -14,6 +14,7 @@ import com.workpath.bookstreamapp.moudles.user.AllUserBean;
 import com.workpath.bookstreamapp.myapp.MyFragment;
 import com.workpath.bookstreamapp.network.RequestCenter;
 import com.workpath.bookstreamapp.okhttp.MyHandler;
+import com.workpath.bookstreamapp.okhttp.OkHttpMethods;
 
 import java.io.IOException;
 
@@ -49,7 +50,7 @@ public class OneFragment extends MyFragment{
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-    protected void initData() {
+    protected void initData() throws IOException {
 
         try {
             RequestCenter.getUsersMsg(new MyHandler() {

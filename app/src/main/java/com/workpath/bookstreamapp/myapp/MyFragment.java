@@ -47,10 +47,10 @@ public abstract class MyFragment extends Fragment {
             }
             try {
                 initWidget(root);
+                initData();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            initData();
             mRoot = root;
 
         } else {
@@ -81,7 +81,7 @@ public abstract class MyFragment extends Fragment {
     protected abstract void initWidget(View view) throws IOException;
 
     /**初始化数据**/
-    protected abstract void initData();
+    protected abstract void initData() throws IOException;
 
 
     /**View可见后刷新数据**/
