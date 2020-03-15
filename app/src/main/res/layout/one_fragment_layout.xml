@@ -1,29 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.workpath.bookstreamapp.MainActivity"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://schemas.android.com/apk/res/android ">
+    android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:theme="@style/AppTheme.AppBarOverlay">
+        <!-- 分类搜索栏的位置 -->
+        <include layout="@layout/toolbar_layout"
+            android:id="@+id/toolbar_layout"/>
 
-        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
-            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <!-- 横向滑动条 -->
+        <HorizontalScrollView
+            android:id="@+id/horizontal_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontalScrollHeight"
+            android:background="@drawable/horizontalview">
 
-    </android.support.design.widget.AppBarLayout>
+            <LinearLayout
+                android:id="@+id/layout_horizontal_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"/>
 
-    <include layout="@layout/content_main1"
-        android:id="@+id/include_one"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        </HorizontalScrollView>
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end" android:layout_margin="1dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <!--展示更多的分类-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</android.support.design.widget.CoordinatorLayout>
+            <!-- 显示相关分类物品 -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rec_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/hidden_comprhsv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/class_comprehsv_style"
+                android:layout_marginStart="@dimen/len_10"
+                android:layout_marginEnd="@dimen/len_10"
+                android:paddingTop="@dimen/len_10"
+                android:paddingStart="@dimen/len_20"
+                android:paddingEnd="@dimen/len_20">
+
+                <com.github.hymanme.tagflowlayout.TagFlowLayout
+                    android:id="@+id/tag_flow_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:textTitleColor="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:tagsTextColor="@color/black"
+                    app:expandHint="查看更多"
+                    app:foldHint="点击收缩"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"/>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+</LinearLayout>

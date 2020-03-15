@@ -3,18 +3,25 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 
-import com.alibaba.fastjson.JSON;
 import com.workpath.bookstreamapp.utils.LogUtils;
 
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.CollectionUtils;
-import okhttp3.*;
 import org.springframework.http.HttpMethod;
+import org.springframework.util.CollectionUtils;
+
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 
@@ -195,7 +202,7 @@ public class OkHttpMethods {
         }
 
         MediaType JSON = MediaType.parse(HTTP_JSON);
-        RequestBody body = RequestBody.create(JSON, json);
+        RequestBody body = RequestBody.create(json,JSON);
         Request.Builder requestBuilder = new Request.Builder().url(url);
         Request request = requestBuilder.post(body).build();
         try {
@@ -226,7 +233,7 @@ public class OkHttpMethods {
         }
 
         MediaType JSON = MediaType.parse(HTTP_JSON);
-        RequestBody body = RequestBody.create(JSON, json);
+        RequestBody body = RequestBody.create(json,JSON);
         Request.Builder requestBuilder = new Request.Builder().url(url);
         Request request = requestBuilder.post(body).build();
         Call call = okHttpClient.newCall(request);
@@ -258,7 +265,7 @@ public class OkHttpMethods {
         }
 
         MediaType JSON = MediaType.parse(HTTP_JSON);
-        RequestBody body = RequestBody.create(JSON, json);
+        RequestBody body = RequestBody.create(json,JSON);
         Request.Builder requestBuilder = new Request.Builder().url(url);
         headers.forEach((k, v) -> requestBuilder.addHeader(k, v));
         Request request = requestBuilder.post(body).build();
@@ -290,7 +297,7 @@ public class OkHttpMethods {
         }
 
         MediaType JSON = MediaType.parse(HTTP_JSON);
-        RequestBody body = RequestBody.create(JSON, json);
+        RequestBody body = RequestBody.create(json,JSON);
         Request.Builder requestBuilder = new Request.Builder().url(url);
         headers.forEach((k, v) -> requestBuilder.addHeader(k, v));
         Request request = requestBuilder.post(body).build();
@@ -317,7 +324,7 @@ public class OkHttpMethods {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static String postDataByForm(String url, String content, Map<String, String> headers) {
         MediaType JSON = MediaType.parse(HTTP_FORM);
-        RequestBody body = RequestBody.create(JSON, content);
+        RequestBody body = RequestBody.create(content,JSON);
 
         Request.Builder requestBuilder = new Request.Builder().url(url);
         if (headers != null && headers.size() > 0) {

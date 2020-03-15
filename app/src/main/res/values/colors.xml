@@ -21,6 +21,8 @@
     <!--首页-->
     <color name="bar_color">#C2C2C2</color>
 
+    <color name="textColor">#cdcdcd</color>
+
     <!--常用颜色-->
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>

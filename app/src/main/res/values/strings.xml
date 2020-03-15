@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">BookStreamApp</string>
+    <string name="app_name">知书</string>
     <string name="action_settings">Settings</string>
     <string name="btnv_one">首页</string>
-    <string name="btnv_two">功能</string>
+    <string name="btnv_two">交易</string>
     <string name="btnv_three">我的</string>
+    <string name="search_hint">搜索</string>
+    <string name="search_no_end">无结果</string>
+    <string name="search_no_title">无结果</string>
+
+    <string name="fun1">我要买书</string>
+    <string name="fun2">我要卖书</string>
+    <string name="fun3">我要租书</string>
+    <string name="fun4">我要捐书</string>
+
 </resources>

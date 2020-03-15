@@ -11,6 +11,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                // 此处指定生成的apk文件名
+                outputFileName = "book.apk"
+            }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -32,6 +39,11 @@ dependencies {
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
+    /**圆形图片**/
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    /**抽屉流式布局**/
+    implementation 'com.github.hymanme.tagflowlayout:tagflowlayout:0.3.0'
 
     /**导航组件**/
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
@@ -49,8 +61,14 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'com.github.tony19:logback-android:2.0.0'
 
+    /**轮播组件**/
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+
     /**导入spring组件**/
     implementation 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+
 
     testImplementation 'junit:junit:4.12'
 

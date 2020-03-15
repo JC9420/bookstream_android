@@ -1,29 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.workpath.bookstreamapp.MainActivity"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://schemas.android.com/apk/res/android ">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
-            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main2"
-        android:id="@+id/include_two"
+    <ImageView
+        android:id="@+id/iv_show"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="@dimen/bar_height"
+        android:background="@color/grey_200"/>
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end" android:layout_margin="1dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.design.widget.CoordinatorLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner_adv"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+            </com.youth.banner.Banner>
+
+
+            <!--功能-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/len_10"
+                android:paddingBottom="@dimen/len_10"
+                android:orientation="horizontal"
+                android:background="@color/white_alpha_48">
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/img_title1_home"
+                            android:layout_width="@dimen/len_40"
+                            android:layout_height="@dimen/len_40"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/buy"/>
+
+                        <TextView
+                            android:id="@+id/tv_title1_home"
+                            android:layout_marginTop="@dimen/len_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fun1"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/img_title2_home"
+                            android:layout_width="@dimen/len_40"
+                            android:layout_height="@dimen/len_40"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/sell"/>
+
+                        <TextView
+                            android:id="@+id/tv_title2_home"
+                            android:layout_marginTop="@dimen/len_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fun2"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/img_title3_home"
+                            android:layout_width="@dimen/len_40"
+                            android:layout_height="@dimen/len_40"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/rent"/>
+
+                        <TextView
+                            android:id="@+id/tv_title3_home"
+                            android:layout_marginTop="@dimen/len_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fun3"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/img_title4_home"
+                            android:layout_width="@dimen/len_40"
+                            android:layout_height="@dimen/len_40"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/donate"/>
+
+                        <TextView
+                            android:id="@+id/tv_title4_home"
+                            android:layout_marginTop="@dimen/len_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fun4"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.workpath.bookstreamapp.activities.ItemView
+                android:id="@+id/shijiantixing"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:left_icon="@drawable/ic_sign_name"
+                app:left_text="事件提醒"
+                app:right_text="添加">
+            </com.workpath.bookstreamapp.activities.ItemView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/font_10"
+                android:paddingRight="@dimen/font_10"
+                android:layout_marginTop="@dimen/len_2"
+                android:layout_marginStart="@dimen/len_4"
+                android:layout_marginEnd="@dimen/len_4"
+                android:background="@drawable/item_style">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/len_30"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_snooze_black_24dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/len_30"
+                    android:layout_marginLeft="@dimen/font_10"
+                    android:maxLines="3"
+                    android:text="2 月 24 日 13：00 需要去还书,英语和数学"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="@dimen/font_28"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:background="@drawable/button_background_selector"
+                    android:textSize="@dimen/font_12"
+                    android:text="关闭提醒" />
+
+
+            </LinearLayout>
+
+            <com.workpath.bookstreamapp.activities.ItemView
+                android:id="@+id/dongtai"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_48"
+                app:left_icon="@drawable/ic_people_outline_black_24dp"
+                app:left_text="校园动态"
+                app:right_text="进入">
+            </com.workpath.bookstreamapp.activities.ItemView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/len_10"
+                android:layout_marginBottom="@dimen/len_10"
+                android:layout_marginTop="0dp">
+
+                <com.workpath.bookstreamapp.activities.ItemView
+                    android:id="@+id/news"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/len_48"
+                    app:left_icon="@drawable/ic_account_balance_black_24dp"
+                    app:left_text="校园新闻"
+                    app:right_text="更多">
+                </com.workpath.bookstreamapp.activities.ItemView>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/font_10"
+                    android:background="@mipmap/news"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/len_10"
+                    android:paddingRight="@dimen/len_10"
+                    android:textSize="@dimen/font_18"
+                    android:text="【荐读】过一种经过思考的人生—在空中课堂于青年学子交流学习"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
