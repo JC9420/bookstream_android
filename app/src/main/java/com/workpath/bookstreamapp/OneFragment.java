@@ -20,8 +20,8 @@ import com.github.hymanme.tagflowlayout.TagFlowLayout;
 import com.github.hymanme.tagflowlayout.bean.TagBean;
 import com.github.hymanme.tagflowlayout.tags.ColorfulStrokeTagView;
 import com.workpath.bookstreamapp.activities.SearchActivity;
-import com.workpath.bookstreamapp.adapters.GoodsAdapter;
-import com.workpath.bookstreamapp.moudles.goods.goodsMoudle;
+import com.workpath.bookstreamapp.adapters.HomeGoodsAdapter;
+import com.workpath.bookstreamapp.moudles.goods.HomeGoodsMoudle;
 import com.workpath.bookstreamapp.myapp.MyAdapter;
 import com.workpath.bookstreamapp.myapp.MyFragment;
 import com.workpath.bookstreamapp.utils.HiddenAnimUtils;
@@ -79,7 +79,7 @@ public class OneFragment extends MyFragment{
 
     /**货物显示**/
     private RecyclerView mRecyclerView;
-    List<goodsMoudle> dataList;
+    List<HomeGoodsMoudle> dataList;
 
     @Override
     protected int getContentLayoutId() {
@@ -114,15 +114,15 @@ public class OneFragment extends MyFragment{
 
         /**商品显示内容**/
         dataList = new ArrayList<>();
-        dataList.add(new goodsMoudle(context,R.mipmap.book1));dataList.add(new goodsMoudle(context,R.mipmap.book2));
-        dataList.add(new goodsMoudle(context,R.mipmap.book3));dataList.add(new goodsMoudle(context,R.mipmap.book4));
-        dataList.add(new goodsMoudle(context,R.mipmap.book5));dataList.add(new goodsMoudle(context,R.mipmap.book6));
-        dataList.add(new goodsMoudle(context,R.mipmap.book1));dataList.add(new goodsMoudle(context,R.mipmap.book2));
-        dataList.add(new goodsMoudle(context,R.mipmap.book3));dataList.add(new goodsMoudle(context,R.mipmap.book4));
-        dataList.add(new goodsMoudle(context,R.mipmap.book5));dataList.add(new goodsMoudle(context,R.mipmap.book6));
-        dataList.add(new goodsMoudle(context,R.mipmap.book1));dataList.add(new goodsMoudle(context,R.mipmap.book2));
-        dataList.add(new goodsMoudle(context,R.mipmap.book3));dataList.add(new goodsMoudle(context,R.mipmap.book4));
-        dataList.add(new goodsMoudle(context,R.mipmap.book5));dataList.add(new goodsMoudle(context,R.mipmap.book6));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book1));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book2));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book3));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book4));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book5));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book6));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book1));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book2));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book3));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book4));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book5));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book6));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book1));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book2));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book3));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book4));
+        dataList.add(new HomeGoodsMoudle(context,R.mipmap.book5));dataList.add(new HomeGoodsMoudle(context,R.mipmap.book6));
 
 
     }
@@ -173,7 +173,7 @@ public class OneFragment extends MyFragment{
         mRecyclerView.addItemDecoration(decoration);
         mRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
         //适配器
-        GoodsAdapter goodsAdapter = new GoodsAdapter(context, dataList, new MyAdapter.AdapterListener() {
+        HomeGoodsAdapter goodsAdapter = new HomeGoodsAdapter(context, dataList, new MyAdapter.AdapterListener() {
             @Override
             public void onItemClick(MyAdapter.MyViewHolder holder, Object data) {
                 if(!(hide_view.getVisibility()==View.GONE)){

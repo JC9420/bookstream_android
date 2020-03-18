@@ -87,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     app:left_icon="@drawable/ic_about"
-                    app:left_text="我的订单"
+                    app:left_text="我的交易"
                     app:right_text="" />
 
                 <com.workpath.bookstreamapp.activities.ItemView

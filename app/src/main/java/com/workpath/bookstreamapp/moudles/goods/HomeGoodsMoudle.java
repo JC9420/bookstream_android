@@ -8,12 +8,12 @@ import com.workpath.bookstreamapp.moudles.Base;
  * Created by JayChen on 2020/3/10.
  */
 
-public class goodsMoudle extends Base{
+public class HomeGoodsMoudle extends Base{
 
     Context context;//传递上下文对象
     int Id;//传递图片Id
 
-    public goodsMoudle(Context context, int id) {
+    public HomeGoodsMoudle(Context context, int id) {
         this.context = context;
         Id = id;
     }

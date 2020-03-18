@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.workpath.bookstreamapp.R;
-import com.workpath.bookstreamapp.moudles.goods.goodsMoudle;
+import com.workpath.bookstreamapp.moudles.goods.HomeGoodsMoudle;
 import com.workpath.bookstreamapp.myapp.MyAdapter;
 import com.workpath.bookstreamapp.utils.ScreenUtils;
 
@@ -16,24 +16,24 @@ import java.util.List;
  * Created by JayChen on 2020/3/10.
  */
 
-public class GoodsAdapter extends MyAdapter<goodsMoudle>{
+public class HomeGoodsAdapter extends MyAdapter<HomeGoodsMoudle>{
 
 
     private Context context;
 
-    public GoodsAdapter(Context context, List<goodsMoudle> dataList, AdapterListener listener){
+    public HomeGoodsAdapter(Context context, List<HomeGoodsMoudle> dataList, AdapterListener listener){
         super(dataList, listener);
         this.context = context;
     }
 
     @Override
-    protected int getItemViewType(int position, goodsMoudle data) {
-        return R.layout.goods_item;
+    protected int getItemViewType(int position, HomeGoodsMoudle data) {
+        return R.layout.home_goods_item;
     }
 
 
     @Override
-    protected MyViewHolder<goodsMoudle> onCreateViewHolder(View root, int viewType) {
+    protected MyViewHolder<HomeGoodsMoudle> onCreateViewHolder(View root, int viewType) {
         return new goodsShowHolder(root);
     }
 
@@ -47,7 +47,7 @@ public class GoodsAdapter extends MyAdapter<goodsMoudle>{
         super.onClick(v);
     }
 
-    public class goodsShowHolder extends MyViewHolder<goodsMoudle>{
+    public class goodsShowHolder extends MyViewHolder<HomeGoodsMoudle>{
 
         private ImageView mImageView;
 
@@ -57,8 +57,8 @@ public class GoodsAdapter extends MyAdapter<goodsMoudle>{
         }
 
         @Override
-        protected void onBind(goodsMoudle data, int position) {
-            goodsMoudle liveBean=mDataList.get(position);
+        protected void onBind(HomeGoodsMoudle data, int position) {
+            HomeGoodsMoudle liveBean=mDataList.get(position);
             //获取Item宽度，计算图片等比比例缩放后的高度，为ImageView设置参数
             LinearLayout.LayoutParams params1= (LinearLayout.LayoutParams) mImageView.getLayoutParams();
             float itemWidth=(ScreenUtils.getScreenWidth(itemView.getContext())-1*3)/2;
