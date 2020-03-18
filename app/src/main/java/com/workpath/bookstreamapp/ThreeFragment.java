@@ -15,11 +15,6 @@ import com.workpath.bookstreamapp.myapp.MyFragment;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
-/**
- * Created by JayChen on 2020/2/3.
- */
-
-
 public class ThreeFragment extends MyFragment{
 
     private ImageView mHBack;

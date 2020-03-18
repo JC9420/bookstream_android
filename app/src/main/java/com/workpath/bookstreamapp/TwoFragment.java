@@ -1,8 +1,14 @@
 package com.workpath.bookstreamapp;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.RelativeLayout;
 
+import com.workpath.bookstreamapp.activities.BuyActivity;
+import com.workpath.bookstreamapp.activities.DonateActivity;
 import com.workpath.bookstreamapp.activities.ItemView;
+import com.workpath.bookstreamapp.activities.RentActivity;
+import com.workpath.bookstreamapp.activities.SellActivity;
 import com.workpath.bookstreamapp.myapp.MyFragment;
 import com.workpath.bookstreamapp.utils.GlideImageLoader;
 import com.youth.banner.Banner;
@@ -17,7 +23,7 @@ import java.util.List;
  */
 
 
-public class TwoFragment extends MyFragment{
+public class TwoFragment extends MyFragment implements View.OnClickListener{
 
     private Banner mBanner;
     private List<Integer> images;
@@ -25,6 +31,12 @@ public class TwoFragment extends MyFragment{
     private ItemView mItemView1;
     private ItemView mItemView2;
     private ItemView mItemView3;
+
+    /**买卖租捐**/
+    private RelativeLayout mRelativeLayout1;
+    private RelativeLayout mRelativeLayout2;
+    private RelativeLayout mRelativeLayout3;
+    private RelativeLayout mRelativeLayout4;
 
     @Override
     public void RefreshData() {
@@ -69,7 +81,15 @@ public class TwoFragment extends MyFragment{
             }
         });
 
-
+        /**买卖租捐**/
+        mRelativeLayout1 = (RelativeLayout) view.findViewById(R.id.rela_buy_book);
+        mRelativeLayout2 = (RelativeLayout) view.findViewById(R.id.rela_sell_book);
+        mRelativeLayout3 = (RelativeLayout) view.findViewById(R.id.rela_rent_book);
+        mRelativeLayout4 = (RelativeLayout) view.findViewById(R.id.rela_donate_book);
+        mRelativeLayout1.setOnClickListener(this);
+        mRelativeLayout2.setOnClickListener(this);
+        mRelativeLayout3.setOnClickListener(this);
+        mRelativeLayout4.setOnClickListener(this);
     }
 
     @Override
@@ -84,5 +104,23 @@ public class TwoFragment extends MyFragment{
                 .setIndicatorGravity(BannerConfig.CENTER)
                 .start();
         mBanner.start();//开始渲染
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.rela_buy_book:
+                startActivity(new Intent(getContext(), BuyActivity.class));
+                break;
+            case R.id.rela_sell_book:
+                startActivity(new Intent(getContext(), SellActivity.class));
+                break;
+            case R.id.rela_rent_book:
+                startActivity(new Intent(getContext(), RentActivity.class));
+                break;
+            case R.id.rela_donate_book:
+                startActivity(new Intent(getContext(), DonateActivity.class));
+                break;
+        }
     }
 }

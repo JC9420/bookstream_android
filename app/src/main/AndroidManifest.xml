@@ -37,6 +37,14 @@
 
         <activity android:name=".activities.SearchActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BuyActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.SellActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.RentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.DonateActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
