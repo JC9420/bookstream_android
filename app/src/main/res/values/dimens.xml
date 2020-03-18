@@ -8,6 +8,7 @@
     <dimen name="horizontalScrollHeight">@dimen/len_40</dimen>
 
     <!--常用高度-->
+    <dimen name="margin_15dp">15dp</dimen>
     <dimen name="len_half">0.5dip</dimen>
     <dimen name="len_1">1.0dip</dimen>
     <dimen name="len_2">2.0dip</dimen>

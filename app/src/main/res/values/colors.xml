@@ -313,5 +313,6 @@
     <color name="yellow_a200">#ffff00</color>
     <color name="yellow_a400">#ffea00</color>
     <color name="yellow_a700">#ffd600</color>
+    <color name="background_color">#f6f6f6</color>
 
 </resources>
