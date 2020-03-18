@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     android.applicationVariants.all {
         variant ->
@@ -70,7 +71,6 @@ dependencies {
     implementation 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     implementation 'com.jph.takephoto:takephoto_library:4.0.3'//拍照的依赖
     implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.1'//二维码
-
 
     testImplementation 'junit:junit:4.12'
 
